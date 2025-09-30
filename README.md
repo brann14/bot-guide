@@ -85,6 +85,6 @@ python main.py
 ```
 After the bot goes online, you can leave the program you are using and it will stay online.
 
-I know this is very simple but I did it fast as a lot of people are asking me.
+I know this is very simple but I did it fast as a lot of people are asking me. (Note that I do not use this main.py setup, I also use a few additonal scripts)
 
 Congratulations on making your first discord bot, welcome to the discord development!
