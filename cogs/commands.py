@@ -17,6 +17,6 @@ class CommandsCog(commands.Cog):
         await ctx.send(f"Greetings, {ctx.author.mention}!")
 
 async def setup(bot: commands.Bot):
-    cog = WelcomeStaff(bot)
+    cog = CommandsCog(bot)
     await bot.add_cog(cog, guilds=[discord.Object(id=GUILD_ID)])
     await bot.tree.sync(guild=discord.Object(id=GUILD_ID))
