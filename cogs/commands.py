@@ -1,5 +1,5 @@
 import discord
-from discord.ext import app_commands
+from discord.ext import commands
 from discord import app_commands
 
 GUILD_ID = 000000000000000000 # Replace with your server ID.
@@ -18,5 +18,6 @@ class CommandsCog(commands.Cog):
 
 async def setup(bot: commands.Bot):
     cog = CommandsCog(bot)
-    await bot.add_cog(cog, guilds=[discord.Object(id=GUILD_ID)])
+    await bot.add_cog(cog)
     await bot.tree.sync(guild=discord.Object(id=GUILD_ID))
+
