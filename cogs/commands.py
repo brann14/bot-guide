@@ -1,3 +1,6 @@
+# This is just a simple template cog.
+# You can keep it, change it, delete it or whatever you want to do with it.
+# The commands I made are meant to show you how to make a slash and a prefix command.
 import discord
 from discord.ext import commands
 from discord import app_commands
