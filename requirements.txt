@@ -1,0 +1,5 @@
+discord.py==2.4.0
+python-dotenv==1.0.1
+aiohttp==3.9.5
+loguru==0.7.2
+jishaku==2.5.2
