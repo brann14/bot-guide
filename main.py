@@ -37,7 +37,7 @@ class App(NonShardedBot):
             intents=discord.Intents.all(),
             owner_ids=[1],
             help_command=None,
-            activity=discord.CustomActivity(name="hi", emoji=None), # You can change the status to whatever you want.
+            activity=discord.CustomActivity(name="watching over the server", emoji=None), # You can change the status to whatever you want.
             allowed_mentions=AllowedMentions(
                 everyone=True,
                 users=True,
