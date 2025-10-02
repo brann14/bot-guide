@@ -1,28 +1,34 @@
 # Easy Bot Setup
-> Here's an easy guide on how to script your first automation. This isn't anything much but it's enough to get you started on the python discord developing.
->  If you plan on hosting this automation 24/7, please prepare a VPS or a server where you'll run it on, most of virtual private servers cost. The best and the most efficient way is to use SSH to connect to it.
->  I highly advise you to use VSC (Visual Studio Code) for coding.
+> This guide explains how to set up, run, and host your Discord bot using the provided script.  
+> The bot uses modern Python features, environment variables for security, structured logging, and a modular cog system.  
 
-## Requirements
+## Requirements  
 
-You need to have a python version higher than 3.8, if you don't have it, install it directly from python.
-You can check easily by running 
+Before you begin, make sure you have the following installed:  
 
-First, make sure you have a discord application and you got it's bot token.
+### **1. Python 3.9 or higher**  
+   Check your version:  
+   ```bash
+   python --version
+   # or
+   python3 --version
+   ```
+Download from [python.org](https://www.python.org/downloads/) if needed.
 
-```bash
-python --version
-```
-Or if you need to type python3
-```bash
-python3 --version
-```
-
-With that, you should also have pip installed.
-You can check what version of pip you have by running
+### **2. pip (python pack manager)**
+Already included with Python, but confirm with:
 ```bash
 pip --version
 ```
+
+### **3. Discord Application & Bot Token**
+Go to the [Discord Developer Portal](https://discord.com/developers/applications).
+Create a new application.
+Add a bot under the Bot tab.
+Copy the bot token (keep it secret).
+
+### **4. Visual Studio Code (recommended)**
+Any text editor works, but VS Code is easier for Python development.
 
 ## Coding
 To start off, you can download or just make your own files and copy my scripts that are posted on this repository.
