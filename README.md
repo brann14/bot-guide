@@ -52,11 +52,11 @@ DISCORD_TOKEN=your_bot_token
 ## Installing Dependencies
 Create a requirements.txt with the following (or just download it from the repo): 
 ```txt
-discord.py
-python-dotenv
-aiohttp
-loguru
-jishaku
+discord.py==2.4.0
+python-dotenv==1.0.1
+aiohttp==3.9.5
+loguru==0.7.2
+jishaku==2.5.2
 ```
 
 Install all dependencies:
