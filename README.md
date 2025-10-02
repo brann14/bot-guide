@@ -30,67 +30,126 @@ Copy the bot token (keep it secret).
 ### **4. Visual Studio Code (recommended)**
 Any text editor works, but VS Code is easier for Python development.
 
-## Coding
-To start off, you can download or just make your own files and copy my scripts that are posted on this repository.
+## Bot Structure
+Make sure your bot structure looks like this with all the code posted on this repo.
+```python
+MyBot/
+│── cogs/                  # Folder for your bot's modular extensions
+│   ├── example.py
+│   └── ...
+│── main.py                 # The main bot script (provided)
+│── requirements.txt        # Python dependencies
+│── .env                    # Stores your bot token and additional keys
+```
 
-After you've done that, install all the requirements with pip by running
+## Environment Variables
+Your script uses .env to store secrets safely.
+Inside your project folder, create a file named .env:
+```.env
+DISCORD_TOKEN=your_bot_token
+```
+
+## Installing Dependencies
+Create a requirements.txt with the following (or just download it from the repo): 
+```txt
+discord.py
+python-dotenv
+aiohttp
+loguru
+jishaku
+```
+
+Install all dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-Next step is to change all the ID's like guild ID, Application Id and bot token. Make sure to never share your bot token.
+## Running the Bot
+Run your bot locally with:
+```bash
+python main.py
+# or
+python3 main.py
+```
+If everything is set up correctly, you should see a log message:
+```bash
+[01-10-2025 15:20:35] (bot:on_ready) @ Connected to Discord as MyBot (123456789012345678)
+```
 
-## Finishing
+## Adding Cogs
+The bot is modular. To add commands, create new files in the cogs/ folder.
+I left a basic cog structure in cogs/commands.py
+When you restart the bot, it will auto-load the cogs, though they might get timed out, you can after how much time they get timed out in main.py.
 
-You can easily add new commands the same way I added those 2 in the commands.py. The `@commands.command` is a prefix command while `@app_commands.command` is a slash command.
+There are a lot of tutorials on how you can make commands and functions that you want.
 
-And last step is to run the bot, you can do that buy running:
+## Hosting with VPS
+Once the bot works locally, you can host it on a VPS (Virtual Private Server) to run 24/7.
+
+### Connecting to the VPS
+Once the bot works locally, you can host it on a VPS (Virtual Private Server) to run 24/7.
+
+### 1. Connect to the VPS
+```bash
+ssh root@YOUR_SERVER_IP
+```
+If successful, your prompt should look like:
+```bash
+[root@yourserver ~]#
+```
+
+### 2. Upload Files
+On your local machine, upload your bot folder:
+```pwsh
+scp -r C:/Users/YourName/MyBot root@YOUR_SERVER_IP:/root/
+```
+
+Check if it uploaded:
+```bash
+ls
+```
+
+### 3. Install Dependencies
+On the VPS, navigate to your bot’s folder:
+```bash
+cd MyBot
+```
+
+Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+### Run in a Screen Session
+Start a screen session (so your bot stays online after you log out):
+```bash
+screen -S DiscordBot
+```
+
+Run your bot:
 ```bash
 python main.py
 ```
 
-If you're happy with your work, you can get yourself a nice VPS and SCP all the files to it. Below this part, there's a guide on how to connect to your VPS with SSH, SCP all the files and host it 24/7.
+Detach from the session (bot keeps running):
+CTRL + A, then press D
 
-# Hosting with VPS
-> If you've finished the previous part and you want to host your bot with a VPS (Visual Private Server) so it's running at all times, you can do so if you follow the next steps. Keep in mind this part requires you to have a VPS.
-> Note that you will have to reinstall everything, like pip, python, and whatever your script is using.
-
-## Connecting to the VPS
-
-Below you can see the command to connect to the VPS, the name root is the automatic username though if you have a different one, change it. The second part is an IP, change it with your VPS's IP
+Check sessions later:
 ```bash
-ssh root@123.456.789
+screen -ls
 ```
-After you've ran that, it's going to ask you for your VPS's password, type it in and wait for you to connect to the VPS.
 
-If you have connected to your VPS, it should look like `[root@Name ~]# `.
-
-After you can successfully connect to your VPS, make a new terminal and run the following.
+Reconnect:
 ```bash
-scp -r C:/Users/Name/Bot_Guide root@123.456.789:/root/
+screen -r DiscordBot
 ```
-Change the path to your folder and where you want to SCP the file to your VPS. Also like before, make sure to change the username (root) and the IP.
 
-After you've done that, switch back to that terminal and run
-```bash
--ls
-```
-If you see your folder, you can move on the next step.
+## Congratulations!
+You’ve now:
+- Set up your bot locally
+- Secured your token with .env
+- Installed dependencies with requirements.txt
+- Learned how to add cogs (modular commands)
+- Deployed your bot to a VPS for 24/7 hosting
 
-```bash
-cd YOUR_FOLDER_NAME
-```
-Change the YOUR_FOLDER_NAME to your folder name. After you've done that, run the following to start a screen session.
-```bash
-screen -S DiscordAutomation
-```
-You can change the `DiscordAutomation` name to whatever you want, just so you can identify it easy.
-Lastly, we have to run the script like we did before, to do that simply run
-```bash
-python main.py
-```
-After the bot goes online, you can leave the program you are using and it will stay online.
-
-I know this is very simple but I did it fast as a lot of people are asking me. (Note that I do not use this main.py setup, I also use a few additonal scripts)
-
-Congratulations on making your first discord bot, welcome to the discord development!
+From here, you can expand with new cogs, slash commands, APIs, and more, good luck in your futher development.
