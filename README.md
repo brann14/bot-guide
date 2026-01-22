@@ -149,6 +149,9 @@ You’ve now:
 - Set up your bot locally
 - Secured your token with .env
 - Installed dependencies with requirements.txt
+
+-# © 2026 brann14
+-# Licensed under CC-BY-NC 4.O.
 - Learned how to add cogs (modular commands)
 - Deployed your bot to a VPS for 24/7 hosting
 
