@@ -1,6 +1,6 @@
 # Easy Bot Setup
 > This guide explains how to set up, run, and host your Discord bot using the provided script.  
-> The bot uses modern Python features, environment variables for security, structured logging, and a modular cog system.  
+> The bot uses modern Python features, environment variables for security and basic cog loading.
 
 ## Requirements  
 
@@ -150,9 +150,10 @@ You’ve now:
 - Secured your token with .env
 - Installed dependencies with requirements.txt
 
--# © 2026 brann14
--# Licensed under CC-BY-NC 4.O.
 - Learned how to add cogs (modular commands)
 - Deployed your bot to a VPS for 24/7 hosting
 
 From here, you can expand with new cogs, slash commands, APIs, and more, good luck in your futher development.
+
+© 2026 brann14
+Licensed under CC-BY-NC 4.O.
